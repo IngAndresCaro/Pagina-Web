@@ -1,0 +1,250 @@
+/*===================================================================Custon properties=========================================================================*/
+
+:root{
+    --primario:#c2185b;
+    --primarioOscuro: rgb(156, 10, 69);
+    --segundario: #ffc107;
+    --terceario: white;
+    --h1Color: rgb(245, 239, 239);
+    --fuentePrimaria : 'Arial', Helvetica, sans-serif;
+    --fuenteSegundaria : 'Poppins', sans-serif;
+}
+
+
+/*===================================================Codigo para controlar el padding en la pagina=============================================================*/
+
+html{
+    box-sizing: border-box;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+/*============================================================================================================================================================*/
+
+body {
+    background-color: var(--primario);
+    font-family: var(--fuentePrimaria);
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.bg-amarillo {
+    background-color: var(--segundario);
+}
+.bg-blanco {
+    background-color: var(--terceario);
+}
+.barra {
+    display: grid;
+    grid-template-columns:100px 1fr;
+    align-items: center;
+}
+/**Botones**/
+.btn {
+    font-size: 2rem;
+    text-decoration: none;
+}
+.btn-editar{
+    color: var(--segundario);
+}
+.btn-borrar{
+    color: var(--primario);
+}
+.volver {
+    background-color: var(--segundario);
+    border-radius: 5px;
+    text-align: center;
+    color: #000000;
+    font-size: 1.2rem;
+    font-weight: 1.2rem;
+    padding: .5rem;
+
+}
+
+.sombra {
+    -webkit-boc-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+h1, h2{
+    font-family: var(--fuenteSegundaria);
+    text-align: center;
+    margin: 0;
+}
+
+h1 {
+    padding: 20px;
+    color: var(--h1Color);
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primario);
+}
+
+.contenedor-barra{
+    background-color: var(--primarioOscuro);
+}
+
+/*============================================================================Formulacio======================================================================*/
+
+form {
+    padding: 3rem;
+    margin-top: 2rem;
+}
+
+form legend {
+    font-family: var(--fuenteSegundaria);
+    font-size: 2rem;
+    text-align: center;
+    display: block;
+}
+
+legend span{
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    clear: both;
+    display: block;
+}
+@media (min-width:768px){
+    .campos {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .campo{
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+}
+
+.campo{
+    padding: .5rem 0;
+}
+
+.campo label{
+    font-size: 1.2rem;
+}
+
+.campo input[type="text"],
+.campo input[type="tel"] {
+    width: 100%;
+    border:none;
+    padding: 0.5rem;
+    height: 3rem;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.enviar{
+    display: flex;
+    justify-content: flex-end;
+}
+.campo input[type="submit"]{
+    background-color: var(--primario);
+    border: none;
+    color: white;
+    padding: 1rem 4rem;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    transition: background-colo -5s ease-in-out;
+    flex: 1;
+}
+.campo input[type="submit"]:hover{
+    cursor: pointer;
+    background-color: var(--primarioOscuro);
+}
+@media (min-width:768px){
+    .campo input[type="submit"]{
+        flex: 0 0 auto;
+    }
+}
+
+
+/*============================================================================Contactos========================================================================*/
+
+.contactos {
+    padding: 2rem ;
+    margin-top: 3rem;
+}
+.contenedor-contactos {
+    max-width: 800px;
+    margin: 4rem auto 0 auto;
+}
+.total-contactos{
+    font-family: var(--fuenteSegundaria);
+    margin: 2rem 0;
+    text-align: center;
+    color: var(--primario);
+    font-size: 2rem;
+}
+.total-contactos span{
+    font-size: 3rem;
+    font-weight: 900;
+}
+.buscardor{
+    width: 100%;
+    height: 4rem;
+    padding: 1rem;
+    border: 1px solid #e1e1e1;
+    margin: 2rem 0;
+}
+/**
+.contenedor-tabla{
+    overflow: scroll;
+}**/
+.listado-contactos {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+    text-align: center;
+}
+.listado-contactos thead {
+    background-color: var(--primario);
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.listado-contactos thead th{
+    padding: 1rem 0;
+}
+.listado-contactos tbody td{
+    padding: 0.5rem 0;
+}
+.listado-contactos tbody td:nth-child(4){
+    text-align: center;
+}
+.listado-contactos button{
+    background-color: transparent!important;
+    border:none;
+}
+
+
+/*============================================================================NOtificaciones========================================================================*/
+
+.notificacion {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem 3rem;
+    opacity: 0;
+    transition: opacity .5s;
+}
+.visible {
+    opacity: 1;
+}
+/**Colores de la notificación**/
+
+.correcto{
+    background-color: rgb(179, 241, 117);
+    color: green;
+}
+.error{
+    background-color: rgb(238, 148, 166);
+    color: rgb(163, 0, 33)  ;
+}
